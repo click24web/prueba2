@@ -41,3 +41,35 @@
         <button class="comprar-btn" onclick="comprarProducto(this)">Comprar</button>
       </div>
       <div
+
+<a href="https://wa.me/5491157487583" class="btn-wsp" target="_blank" aria-label="WhatsApp"><img src="icono-whatsapp.png" alt="WhatsApp" /></a>
+
+<script>
+function toggleMenu() {
+  const nav = document.querySelector('.nav');
+  nav.classList.toggle('open');
+}
+
+// Fade-in animation
+document.addEventListener("DOMContentLoaded", () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+});
+
+function comprarProducto(btn) {
+  const producto = btn.closest('.producto');
+  const nombre = producto.querySelector('h3')?.innerText || "Producto";
+  const mensaje = encodeURIComponent("Hola, quiero comprar: " + nombre);
+  const url = "https://wa.me/5491157487583?text=" + mensaje;
+  window.open(url, "_blank");
+}
+</script>
+</body>
+</html>
