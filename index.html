@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EM IMPORT</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <img src="logo.jpg" alt="Logo EM IMPORT" class="logo" />
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+<nav class="nav">
+      <a href="#inicio">Inicio</a>
+      <a href="#nosotros">Quiénes somos</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <section id="inicio" class="hero fade-in" class="hero">
+    <div class="hero-content">
+      <h1>Bienvenido a EM IMPORT</h1>
+      <p>Importamos lo mejor del mundo para vos. Mayorista y minorista.</p>
+    </div>
+  </section>
+
+  <section id="nosotros" class="section fade-in" class="section">
+    <h2>¿Quiénes somos?</h2>
+    <p>EM IMPORT es una empresa dedicada a la importación de productos tecnológicos, accesorios y más. Trabajamos con ventas mayoristas y minoristas, garantizando la mejor calidad y precios del mercado.</p>
+  </section>
+
+  <section id="catalogo" class="section fade-in" class="section">
+    <h2>Catálogo</h2>
+    <div class="catalogo">
+      <div class="producto">
+        <img src="vape_ellie.jpg" alt="Vape Ellie">
+        <h3>Vape Ellie Black Edition</h3>
+        <p>Diseño premium con pantalla digital. Incluye sabores Strawberry Watermelon y Blueberry Ice.</p>
+        <p class="precio">$25.000</p>
+      </div>
+      <div class="producto">
+        <img src="vape_elfbar.jpg" alt="Vape Elfbar">
+        <h3>Elfbar Ice King Baja Sparkle</h3>
+        <p>Hasta 40.000 puffs. Sabor intenso con niveles ajustables. Ideal para uso prolongado.</p>
+        <p class="precio">$18.500</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="section fade-in" class="section contacto">
+    <h2>Contacto</h2>
+    <p>Escribinos por WhatsApp para consultas o pedidos.</p>
+    <a href="https://wa.me/1234567890" class="btn-wsp" target="_blank">🟢 Contactar por WhatsApp</a>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-redes">
+      <a href="#"><img src="icono-instagram.png" alt="Instagram"></a>
+      <a href="#"><img src="icono-whatsapp.png" alt="WhatsApp"></a>
+    </div>
+    <p class="eslogan">EM IMPORT - Conectamos el mundo con vos.</p>
+  </footer>
+
+<a href="https://wa.me/5491157487583" class="btn-wsp" target="_blank" aria-label="WhatsApp">
+  <img src="icono-whatsapp.png" alt="WhatsApp" />
+</a>
+
+
+<script>
+function toggleMenu() {
+  const nav = document.querySelector('.nav');
+  nav.classList.toggle('open');
+}
+
+// Fade-in animation
+document.addEventListener("DOMContentLoaded", () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+});
+</script>
+
+</body>
+</html>
